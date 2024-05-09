@@ -1,4 +1,4 @@
-immutable_var = (25,26,27,28)
+immutable_var = (25,26,27,'кортеж')
 print(immutable_var)
 immutable_var = immutable_var + (29,30)
 print(immutable_var)
