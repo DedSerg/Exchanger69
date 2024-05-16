@@ -1,6 +1,7 @@
-def print_params(name, name1):
-    print(name, name1)
+def print_params(name):
+    print(name + name)
 
-print_params('Gala', 'Serg')
-print_params('John', 'Ringo')
-print_params('Pol', 'George')
+
+print_params('Serg ')
+print_params('Gala ')
+print_params('John ')
