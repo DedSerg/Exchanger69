@@ -1,5 +1,5 @@
 def print_params(name):
-    print(name + name)
+    print(name * 2)
 
 
 print_params('Serg ')
