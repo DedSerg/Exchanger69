@@ -1,13 +1,5 @@
-def test_horror(txt, *square, type ='мозг'):
-    s = 2
-    for i in square:
-        s **= i
-    return f'{txt} {s} {type}'
-print(test_horror('Ужас в ночи', 1,2,3 ))
+from fake_math import fake_divide as fd
+from true_math import true_divide as td
 
-def fac_horror(n):
-    if n == 1:
-        return 1
-    return fac_horror(n-1) * n
-print(fac_horror(3))
-
+print(fd(25, 0))
+print(td(25,5))
