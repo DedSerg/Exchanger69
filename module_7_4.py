@@ -1,6 +1,5 @@
 team1_name = "Второе дыхание"
 team2_name = "La shance final"
-result = 'ничья'
 team1_num = 5
 team2_num = 6
 score_1 = 40
