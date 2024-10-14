@@ -6,7 +6,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
 
-api = ""
+api = "7384131085:AAFXpA1nM_kCaDr_vvunxyOIjRUuVfpUDI4"
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -15,7 +15,7 @@ button3 = KeyboardButton(text='Рассчитать')
 button4 = KeyboardButton(text="Информация")
 kb2.row(button3, button4)
 
-kb1 = InlineKeyboardMarkup(resize_keyboard=True)
+kb1 = InlineKeyboardMarkup()
 button1 = InlineKeyboardButton(text='Рассчитать норму калорий', callback_data='calories')
 button2 = InlineKeyboardButton(text='Формулы расчёта', callback_data='formulas')
 kb1.row(button1, button2)
@@ -32,12 +32,12 @@ async def consol_command(messeage):
     await messeage.answer('Привет! Я бот помогающий твоему здоровью.', reply_markup=kb2)
 
 
-@dp.message_handler(text='Информация')
+@dp.message_handler(content_types=['text'], text= 'Информация')
 async def inform(message):
     await message.answer('Информация о боте!')
 
 
-@dp.message_handler(text='Рассчитать')
+@dp.message_handler(content_types=['text'], text='Рассчитать')
 async def client_menu(message):
     await message.answer('Выберите опцию:', reply_markup=kb1)
 
