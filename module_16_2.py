@@ -16,8 +16,8 @@ async def get_id_page(user_id: Annotated[int,Path(ge=1, le=100, description='Ent
     return f'Вы вошли как пользователь № {user_id}'
 
 @app.get("/user")
-async def get_user_page(username: Annotated[str, Path(min_length=3, max_length=15,
+async def get_user_page(username: Annotated[str, Path(min_length=5, max_length=20,
                                       description='Enter username', example='DeD_Serg')],
-                    age: Annotated[int,Path(ge=16, le=75, description='Enter age', example='55')]):
+                    age: Annotated[int,Path(ge=18, le=120, description='Enter age', example='55')]):
     return f"Информация о пользователе. Имя: {username}, Возраст: {age}"
 
