@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% block crud_container %}
+<section class="container-fluid">
+    <form method="post" action="/user/">
+        <div class="col-auto">
+            <div class="input-group mb-3">
+                <input type="text" name="username" class="form-control"
+                       placeholder="Add new user" aria-label="Add user"
+                       aria-describedby="button-addon2" required/>
+                <input type="number" name="age" class="form-control"
+                       placeholder="Age" aria-label="Add age"
+                       aria-describedby="button-addon2" required/>
+                <button class="btn btn-outline-primary" type="submit" id="button-addon2"
+                        data-mdb-ripple-color="dark">
+                    Add
+                </button>
+            </div>
+        </div>
+    </form>
+</section>
+
+{% if user %}
+    <article class="card container-fluid">
+        <div class="card-body">
+            <h2>ID: {{ user.id }}</h2>
+            <p>
+                <strong>Username: {{ user.username }}</strong><br>
+                <strong>Age: {{ user.age }}</strong>
+            </p>
+        </div>
+    </article>
+    <br>
+{% endif %}
+
+<section class="container-fluid">
+    <h2 align="center">Users</h2>
+    <br>
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            {% for user_id, user_info in users.items() %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ user_id }}: <a href="/users/{{ user_id }}">{{ user_info.username }}</a>
+<!--                    <form action="/user/{{ user_id }}" method="post" style="display:inline;">-->
+<!--                        <input type="hidden" name="_method" value="DELETE">-->
+<!--                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>-->
+<!--                    </form>-->
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}
